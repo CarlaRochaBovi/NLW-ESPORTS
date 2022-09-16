@@ -1,0 +1,190 @@
+* {
+        margin: 0;
+        padding:0;
+        /* o box- border faz com que a adição de pixels em padding e margins não imfluenciem no tamanho máxico do conteúdo*/
+        box-sizing: border-box;
+}
+
+body {
+    background-image: url(./assets/bg.jpg);
+
+    /* deixa a imagem no topo do centro*/
+    background-position: top center;
+    /*imagem fica em 100% nas laterais, e automática verticalmente*/
+    background-size: 100% auto;
+
+    /*não deixa a imagem se repitir*/
+    background-repeat: no-repeat;
+
+    background-color: #121214;
+
+}
+
+body *{
+    font-family: 'inter', sans-serif;
+    line-height: 160%;
+
+}
+
+header {
+    padding-top: 32px;
+
+    height: calc(120px + 32px);
+}
+
+header div {
+    width: 120px;
+
+    margin: auto;
+
+    background-image: linear-gradient(90deg, #9572FC 0%, #43e7ad 50.51%, #e2e45c 100%);
+    border-radius: 50%;
+
+    display: flex;
+    padding: 4px;
+
+    /*o transition mexe com a transição, seu primeiro parâmetro ser como um "check", no caso transform, quando ele ocorrer averá o tempo da transição*/
+    transition: transform .3s;
+}
+
+/*o ":hover" faz com que algo mude enquanto o mouse esta em cima do conteúdo*/
+
+header div:hover {
+
+    /*o transform mexe com a posição e escala do conteúdo*/
+    transform: scale(1.1)
+}
+
+header div img {
+    width: 100%;
+
+    border-radius: 50%;
+}
+
+main {
+    max-width: 580px;
+    width: 90%;
+
+    /* todas as margens serão automáticas em relação ao tamanho da tela*/
+    margin: 32px auto;
+
+    /*deixa o conteúdo em grades*/
+    display: grid;
+    gap: 24px;
+}
+
+
+h2{ 
+    color: white;
+
+    /*espaço entre cada letra*/
+    letter-spacing: -0.47px;
+}
+
+p {
+
+    /*espaço entre cada letra*/
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+
+    margin-bottom: 24px;
+}
+
+
+section {
+    background-image: linear-gradient(90deg, #9572FC 0%, #43e7ad 50.51%, #e2e45c 100%);
+    border-radius: 10px;
+
+    padding-top: 4px;
+}
+section ul li {
+    transition: transform .3s;
+}
+
+section ul li:hover {
+    transform: scale(1.1)
+}
+
+section ul {
+
+    display: flex;
+    
+    /*caso o conteúdo passe do limite da caixa, ele ira para baixo*/
+    flex-wrap: wrap;
+    gap: 16px;
+
+    list-style: none;
+}
+
+section div {
+    background-color: #2A2634;
+
+    border-radius: 8px;
+
+    padding: 32px;
+    padding-top: 24px;
+}
+
+/* classes em tag são identificadas no CSS colocando um ponto no inicio*/
+.games-list img{    
+    width: 90%;
+    border-radius: 8px;
+
+}
+
+.channel-list img {
+    border-radius: 50%;
+    width: 70px;
+
+    border: 2px solid #443E54;
+}
+
+/* animation */
+
+/* colocar o backwards faz com que o css pegue os últimos elementos vem primeiro que ele*/
+header div {
+    animation: fromTop .7s .1s backwards;
+}
+
+main section {
+    animation: fromBottom .7s backwards;
+
+}
+
+main section:nth-child(1) {
+    animation-delay: .1s;
+}
+
+main section:nth-child(2) {
+    animation-delay: .2s;
+}
+
+main section:nth-child(3) {
+    animation-delay: .3s;
+}
+
+/* aqui o  keyframes serve para dar início na animação*/
+@keyframes fromTop {
+    from{
+        opacity: 0;
+        transform: translateY(-50px)
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+
+@keyframes fromBottom {
+    from{
+        opacity: 0;
+        transform: translateY(50px)
+    }
+
+    to{
+        opacity: 1;
+        Transform: translateY(0)
+    }
+}
