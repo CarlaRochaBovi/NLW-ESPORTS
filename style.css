@@ -1,7 +1,7 @@
 * {
         margin: 0;
         padding:0;
-        /* o box- border faz com que a adição de pixels em padding e margins não imfluenciem no tamanho máxico do conteúdo*/
+        /* o box-sizing border box faz com que a adição de pixels em padding e margins não imfluenciem no tamanho máxico do conteúdo*/
         box-sizing: border-box;
 }
 
